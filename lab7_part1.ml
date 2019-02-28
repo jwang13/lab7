@@ -58,12 +58,14 @@ temporary value pending your putting in appropriate ones.)
 
 module Math : MATH =
   struct
-    let pi = nan
-    let cos _ = nan
-    let sin _ = nan
-    let sum _ _ = nan
-    let max _ = None
-  end ;;
+    let pi = 4.0 *. atan 1.0
+    let cos = cos 
+    let sin = sin 
+    let sum = (+.)
+    let max inlist = if inlist = [] then None else
+      Some (List.fold_left (fun a b -> if a > b then a else b) (List.hd inlist) inlist)
+  end
+  ;;
 
 (*......................................................................
 Exercise 1B: Now that you've implemented the Math module, use it to
@@ -72,7 +74,7 @@ type float option. Name the resulting value "result". (Do not use a
 local open for this exercise.)
 ......................................................................*)
 
-let result = Some nan ;;
+let result = Math.max [(Math.cos Math.pi);(Math.sin Math.pi)] ;;
 
 (*......................................................................
 Exercise 1C: Reimplement the computation from 1B above, now as
