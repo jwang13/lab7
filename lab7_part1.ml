@@ -82,4 +82,6 @@ Exercise 1C: Reimplement the computation from 1B above, now as
 in a more succinct manner.
 ......................................................................*)
 
-let result_local_open = Some nan ;;
+let result_local_open = 
+  let open Math in
+  max [cos pi; sin pi] ;;
