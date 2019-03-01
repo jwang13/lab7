@@ -12,7 +12,7 @@ replacing it wholesale with a simpler implementation. *)
 module type color =
   sig
     type color
-    type color_name
+    type color_named
     val to_color : int -> int -> int -> color
     val red : color -> int
     val green : color -> int
