@@ -17,7 +17,7 @@ files to complete all exercises:
 
  *)
 
-
+module Color = Color;;
 (*======================================================================
 Part 2: Files as modules
 
